@@ -5,6 +5,7 @@
   const header = document.querySelector('.site-header');
   const backToTop = document.querySelector('.back-to-top');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const skipLoader = document.documentElement.classList.contains('skip-site-loader');
   const startedAt = performance.now();
   let loaderClosed = false;
   let revealsActivated = false;
@@ -74,14 +75,20 @@
     revealTargets.forEach((item) => observer.observe(item));
   };
 
-  const closeLoader = () => {
+  const closeLoader = (immediate = false) => {
     if (loaderClosed) return;
     loaderClosed = true;
     loader?.classList.add('is-hidden');
     loader?.setAttribute('aria-hidden', 'true');
     body.classList.remove('is-loading');
+    try {
+      window.sessionStorage.setItem('kaysons-loader-seen', '1');
+    } catch (error) {
+      // Storage can be disabled; the loader still closes normally.
+    }
     activateReveals();
-    window.setTimeout(() => loader?.remove(), 650);
+    if (immediate) loader?.remove();
+    else window.setTimeout(() => loader?.remove(), 650);
   };
 
   const scheduleLoaderClose = () => {
@@ -94,14 +101,16 @@
     window.setTimeout(closeLoader, remaining);
   };
 
-  if (document.readyState === 'complete') {
-    scheduleLoaderClose();
+  if (skipLoader) {
+    closeLoader(true);
+  } else if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleLoaderClose, { once: true });
   } else {
-    window.addEventListener('load', scheduleLoaderClose, { once: true });
+    scheduleLoaderClose();
   }
 
-  // Never leave the page covered if an asset is slow or fails.
-  window.setTimeout(closeLoader, 3200);
+  // Never leave the page covered if the browser delays a lifecycle event.
+  window.setTimeout(closeLoader, 2000);
 
   let scrollFrame = 0;
   const updateScrollUi = () => {
