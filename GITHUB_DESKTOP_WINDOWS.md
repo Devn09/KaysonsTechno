@@ -10,6 +10,8 @@
 6. Return to GitHub Desktop. Enter the summary **Redesign Kaysons website**.
 7. Select **Commit to main**, then **Push origin**.
 
+Before committing, complete the public EmailJS and optional GA4 IDs in **site-config.js** by following **SETUP_EMAILJS_ANALYTICS.md**. If those IDs are not yet available, the website still works and the enquiry form falls back to preparing an email in the visitor's email application.
+
 ## Turn on GitHub Pages
 
 1. Open the repository on github.com.
