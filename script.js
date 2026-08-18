@@ -79,7 +79,7 @@
     if (!header?.contains(event.target)) closeNavigation();
   });
 
-  window.matchMedia('(min-width: 901px)').addEventListener?.('change', (event) => {
+  window.matchMedia('(min-width: 761px)').addEventListener?.('change', (event) => {
     if (event.matches) closeNavigation();
   });
 
@@ -198,25 +198,90 @@
 
   activateReveals();
 
-  /* Product portfolio provisions and filtering. */
+  /* Product media registry and product filtering. */
   const productCards = Array.from(document.querySelectorAll('.catalogue-card'));
+  const productAssets = window.KAYSONS_PRODUCT_ASSETS || {};
+  const normaliseValues = (values) => Array.isArray(values)
+    ? values.map((value) => String(value).trim().toLowerCase()).filter(Boolean)
+    : [];
+
+  const makeResource = (label, href = '', readyWithoutLink = false) => {
+    const element = href ? document.createElement('a') : document.createElement('span');
+    element.textContent = label;
+    if (href) {
+      element.href = href;
+      element.target = '_blank';
+      element.rel = 'noopener noreferrer';
+      element.className = 'resource-link';
+    } else {
+      element.className = readyWithoutLink ? 'resource-ready' : 'resource-pending';
+    }
+    return element;
+  };
+
   productCards.forEach((card) => {
+    const asset = productAssets[card.id] || {};
     const copy = card.querySelector('.catalogue-copy');
     const cta = card.querySelector('.catalogue-discuss');
-    if (!copy || !cta || copy.querySelector('.product-resources')) return;
+    const visual = card.querySelector('.catalogue-visual');
+    const image = card.querySelector('.visual-mark img');
+    if (!copy || !cta) return;
+
+    const gasGroups = normaliseValues(asset.gasGroups);
+    const zones = normaliseValues(asset.zones);
+    const certifications = normaliseValues(asset.certifications);
+    card.dataset.gasGroups = gasGroups.join(' ');
+    card.dataset.zones = zones.join(' ');
+    card.dataset.certifications = certifications.join(' ');
+
+    if (asset.image && image) {
+      image.src = asset.image;
+      image.alt = asset.imageAlt || `${card.querySelector('h2')?.textContent || 'Kaysons product'} photograph`;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.removeAttribute('width');
+      image.removeAttribute('height');
+      visual?.removeAttribute('aria-hidden');
+      card.classList.add('has-product-image');
+    }
+
+    if (copy.querySelector('.product-resources')) return;
     const resources = document.createElement('div');
     resources.className = 'product-resources';
-    resources.setAttribute('aria-label', 'Reserved product media and download areas');
-    resources.innerHTML = '<span>Photo provision</span><span>Datasheet provision</span><span>Certificate provision</span>';
+    resources.setAttribute('aria-label', 'Product media and downloads');
+    resources.append(makeResource(asset.image ? 'Photo ready' : 'Photo pending', '', Boolean(asset.image)));
+    resources.append(makeResource(asset.datasheet ? 'Technical datasheet' : 'Datasheet pending', asset.datasheet || ''));
+    resources.append(makeResource(asset.catalogue ? 'Product catalogue' : 'Catalogue pending', asset.catalogue || ''));
+
+    if (Array.isArray(asset.certificates) && asset.certificates.length) {
+      asset.certificates.forEach((certificate) => {
+        if (certificate?.href) resources.append(makeResource(certificate.label || 'Certificate', certificate.href));
+      });
+    } else {
+      resources.append(makeResource('Certificates pending'));
+    }
     copy.insertBefore(resources, cta);
   });
 
   const searchInput = document.querySelector('#product-search');
   const protectionFilter = document.querySelector('#protection-filter');
+  const gasFilter = document.querySelector('#gas-filter');
+  const zoneFilter = document.querySelector('#zone-filter');
+  const certificationFilter = document.querySelector('#certification-filter');
   const filterReset = document.querySelector('.filter-reset');
   const filterCount = document.querySelector('#filter-count');
   const catalogueGrid = document.querySelector('.catalogue-grid');
   let filterEmpty = null;
+
+  const activateDataFilter = (filter, datasetKey) => {
+    if (!filter) return;
+    const hasProductData = productCards.some((card) => (card.dataset[datasetKey] || '').trim());
+    filter.disabled = !hasProductData;
+  };
+
+  activateDataFilter(gasFilter, 'gasGroups');
+  activateDataFilter(zoneFilter, 'zones');
+  activateDataFilter(certificationFilter, 'certifications');
 
   if (catalogueGrid && productCards.length) {
     filterEmpty = document.createElement('p');
@@ -229,13 +294,22 @@
   const applyProductFilters = () => {
     const query = (searchInput?.value || '').trim().toLowerCase();
     const protection = protectionFilter?.value || '';
+    const gasGroup = gasFilter?.value || '';
+    const zone = zoneFilter?.value || '';
+    const certification = certificationFilter?.value || '';
     let visible = 0;
 
     productCards.forEach((card) => {
       const matchesText = !query || card.textContent.toLowerCase().includes(query);
       const concepts = (card.dataset.protection || '').split(' ');
+      const gasGroups = (card.dataset.gasGroups || '').split(' ');
+      const zones = (card.dataset.zones || '').split(' ');
+      const certifications = (card.dataset.certifications || '').split(' ');
       const matchesProtection = !protection || concepts.includes(protection);
-      const show = matchesText && matchesProtection;
+      const matchesGasGroup = !gasGroup || gasGroups.includes(gasGroup);
+      const matchesZone = !zone || zones.includes(zone);
+      const matchesCertification = !certification || certifications.includes(certification);
+      const show = matchesText && matchesProtection && matchesGasGroup && matchesZone && matchesCertification;
       card.classList.toggle('is-filtered-out', !show);
       if (show) visible += 1;
     });
@@ -246,9 +320,15 @@
 
   searchInput?.addEventListener('input', applyProductFilters);
   protectionFilter?.addEventListener('change', applyProductFilters);
+  gasFilter?.addEventListener('change', applyProductFilters);
+  zoneFilter?.addEventListener('change', applyProductFilters);
+  certificationFilter?.addEventListener('change', applyProductFilters);
   filterReset?.addEventListener('click', () => {
     if (searchInput) searchInput.value = '';
     if (protectionFilter) protectionFilter.value = '';
+    if (gasFilter) gasFilter.value = '';
+    if (zoneFilter) zoneFilter.value = '';
+    if (certificationFilter) certificationFilter.value = '';
     applyProductFilters();
     searchInput?.focus();
   });
@@ -298,6 +378,9 @@
       status?.classList.remove('is-success', 'is-error');
       if (!form.checkValidity()) {
         form.reportValidity();
+        const firstInvalidField = form.querySelector(':invalid');
+        firstInvalidField?.focus({ preventScroll: true });
+        firstInvalidField?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         if (status) {
           status.textContent = 'Please complete the required fields and privacy consent.';
           status.classList.add('is-error');

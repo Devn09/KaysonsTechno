@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#11181b">
-<title>Explosion-Protected Product Portfolio | Kaysons</title>
+<title>Product Portfolio | Kaysons Techno Equipments</title>
 <meta name="description" content="Explore Kaysons explosion-protected lighting, controls, panels, enclosures, cable glands and Ex components for hazardous industrial applications.">
 <link rel="canonical" href="https://www.kaysonstechno.com/products.html">
 <link rel="icon" type="image/png" href="kaysons-mark.png">
 <link rel="apple-touch-icon" href="kaysons-mark.png">
 <link rel="preload" href="kaysons-logo.jpg" as="image">
 <link rel="preload" href="kaysons-mark.png" as="image">
-<meta property="og:title" content="Explosion-Protected Product Portfolio | Kaysons">
+<meta property="og:title" content="Product Portfolio | Kaysons Techno Equipments">
 <meta property="og:description" content="Ten focused product groups covering lighting, control, connection, panels, enclosures and hazardous-area accessories.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.kaysonstechno.com/products.html">
@@ -82,9 +82,9 @@ document.documentElement.classList.add('js');try{if(sessionStorage.getItem('kays
 <div class="filter-grid">
 <label>Search<input type="search" id="product-search" placeholder="Search product categories" autocomplete="off"></label>
 <label>Protection concept<select id="protection-filter"><option value="">All concepts</option><option value="ex-d">Ex d</option><option value="ex-e">Ex e</option><option value="ex-t">Ex t</option></select></label>
-<label>Gas group<select disabled aria-describedby="filter-data-note"><option>All gas groups</option><option>Group I</option><option>IIA</option><option>IIB</option><option>IIC</option></select></label>
-<label>Zone<select disabled aria-describedby="filter-data-note"><option>All zones</option><option>Zone 1</option><option>Zone 2</option><option>Zone 21</option><option>Zone 22</option></select></label>
-<label>Certification<select disabled aria-describedby="filter-data-note"><option>All certifications</option><option>IECEx</option><option>ATEX</option><option>PESO</option></select></label>
+<label>Gas group<select id="gas-filter" disabled aria-describedby="filter-data-note"><option value="">All gas groups</option><option value="group-i">Group I</option><option value="iia">IIA</option><option value="iib">IIB</option><option value="iic">IIC</option></select></label>
+<label>Zone<select id="zone-filter" disabled aria-describedby="filter-data-note"><option value="">All zones</option><option value="zone-1">Zone 1</option><option value="zone-2">Zone 2</option><option value="zone-21">Zone 21</option><option value="zone-22">Zone 22</option></select></label>
+<label>Certification<select id="certification-filter" disabled aria-describedby="filter-data-note"><option value="">All certifications</option><option value="iecex">IECEx</option><option value="atex">ATEX</option><option value="peso">PESO</option></select></label>
 </div>
 <div class="filter-meta"><span id="filter-count">10 product groups</span><small id="filter-data-note">Gas group, zone and certification filters will activate when product-wise certificates and technical data are uploaded. Exact applicability must be verified against the relevant certificate.</small></div>
 </div>
@@ -351,20 +351,28 @@ document.documentElement.classList.add('js');try{if(sessionStorage.getItem('kays
 </main>
 <footer class="footer">
 <div class="shell footer-grid">
-    <div>
-<img class="footer-logo" src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited" width="500" height="93" loading="lazy" decoding="async">
+    <div class="footer-brand">
+<span class="footer-logo-wrap"><img class="footer-logo" src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited" width="500" height="93" loading="lazy" decoding="async"></span>
 <p>Explosion-protected electrical equipment for hazardous industrial areas.</p>
+<div class="footer-protection"><span>Ex d</span><span>Ex e</span><span>Ex t</span></div>
 </div>
-    <div>
+    <div class="footer-column">
 <p class="footer-label">Navigate</p>
 <a href="products.html">Product Portfolio</a>
 <a href="about.html">About Us</a>
 <a href="contact.html">Contact</a>
 </div>
-    <div>
+    <div class="footer-column">
 <p class="footer-label">Contact sales</p>
 <a href="tel:+917211116003">+91 7211116003</a>
+<a href="tel:+917211116004">+91 7211116004</a>
+<a href="tel:+917211116005">+91 7211116005</a>
 <a href="mailto:sales@kaysonstechno.com">sales@kaysonstechno.com</a>
+</div>
+    <div class="footer-column footer-location">
+<p class="footer-label">Registered office & works</p>
+<p>1802/7, Phase IV, G.I.D.C. Estate,<br>Vitthal Udyognagar – 388 121,<br>Gujarat, India</p>
+<a href="https://maps.app.goo.gl/dc6hkpB1cHCBP7jx9?g_st=ic" target="_blank" rel="noopener noreferrer">View location ↗</a>
 </div>
   </div>
 <div class="shell footer-bottom">
@@ -374,6 +382,7 @@ document.documentElement.classList.add('js');try{if(sessionStorage.getItem('kays
 </div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+<script src="product-assets.js"></script>
 <script src="script.js">
 </script>
 </body>
