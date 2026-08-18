@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11181b">
 <title>About Kaysons | Hazardous-Area Equipment Manufacturer</title>
 <meta name="description" content="Established in 1996, Kaysons Techno Equipments engineers and manufactures explosion-protected electrical equipment at Vitthal Udyognagar, Gujarat.">
 <link rel="canonical" href="https://www.kaysonstechno.com/about.html">
 <link rel="icon" type="image/png" href="kaysons-mark.png">
 <link rel="apple-touch-icon" href="kaysons-mark.png">
+<link rel="preload" href="kaysons-logo.jpg" as="image">
+<link rel="preload" href="kaysons-mark.png" as="image">
 <meta property="og:title" content="About Kaysons | Hazardous-Area Equipment Manufacturer">
 <meta property="og:description" content="Application-led engineering, manufacturing, inspection and testing for hazardous-area electrical equipment since 1996.">
 <meta property="og:type" content="website">
@@ -16,7 +19,7 @@
 <meta name="twitter:card" content="summary">
 <script src="site-config.js"></script>
 <script>
-try{if(sessionStorage.getItem('kaysons-loader-seen')==='1')document.documentElement.classList.add('skip-site-loader')}catch(e){}
+document.documentElement.classList.add('js');try{if(sessionStorage.getItem('kaysons-loader-seen')==='1')document.documentElement.classList.add('skip-site-loader')}catch(e){}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AboutPage","name":"About Kaysons Techno Equipments Private Limited","url":"https://www.kaysonstechno.com/about.html","about":{"@id":"https://www.kaysonstechno.com/#organization"}}
@@ -41,9 +44,10 @@ try{if(sessionStorage.getItem('kaysons-loader-seen')==='1')document.documentElem
   <header class="site-header">
 <div class="shell header-inner">
     <a class="brand" href="index.html" aria-label="Kaysons Techno Equipments Private Limited home">
-<img src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited">
+<img src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited" width="500" height="93" fetchpriority="high">
 </a>
-    <nav class="nav" aria-label="Primary navigation">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span><b>Menu</b></button>
+    <nav class="nav" id="primary-navigation" aria-label="Primary navigation">
 <a class="" href="index.html">Home</a>
 <a class="" href="products.html">Product Portfolio</a>
 <a class="active" href="about.html" aria-current="page">About Us</a>
@@ -164,31 +168,31 @@ try{if(sessionStorage.getItem('kaysons-loader-seen')==='1')document.documentElem
 </div>
     <div class="approval-marks">
       <div class="approval-mark">
-<img src="approval-iecex.png" alt="IECEx logo">
+<img src="approval-iecex.png" alt="IECEx logo" width="900" height="500" loading="lazy" decoding="async">
 <span>IECEx</span>
 </div>
       <div class="approval-mark">
-<img src="approval-atex.webp" alt="ATEX logo">
+<img src="approval-atex.webp" alt="ATEX logo" width="400" height="400" loading="lazy" decoding="async">
 <span>ATEX</span>
 </div>
       <div class="approval-mark">
-<img src="approval-ce.webp" alt="CE logo">
+<img src="approval-ce.webp" alt="CE logo" width="866" height="650" loading="lazy" decoding="async">
 <span>CE</span>
 </div>
       <div class="approval-mark">
-<img src="approval-cimfr.png" alt="CIMFR logo">
+<img src="approval-cimfr.png" alt="CIMFR logo" width="319" height="319" loading="lazy" decoding="async">
 <span>CIMFR</span>
 </div>
       <div class="approval-mark">
-<img src="approval-peso.jpg" alt="PESO logo">
+<img src="approval-peso.jpg" alt="PESO logo" width="127" height="130" loading="lazy" decoding="async">
 <span>PESO</span>
 </div>
       <div class="approval-mark">
-<img src="approval-eil.png" alt="EIL logo">
+<img src="approval-eil.png" alt="EIL logo" width="560" height="280" loading="lazy" decoding="async">
 <span>EIL</span>
 </div>
       <div class="approval-mark">
-<img src="approval-dgms.png" alt="DGMS logo">
+<img src="approval-dgms.png" alt="DGMS logo" width="221" height="228" loading="lazy" decoding="async">
 <span>DGMS</span>
 </div>
     </div>
@@ -208,7 +212,7 @@ try{if(sessionStorage.getItem('kaysons-loader-seen')==='1')document.documentElem
 <footer class="footer">
 <div class="shell footer-grid">
     <div>
-<img class="footer-logo" src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited">
+<img class="footer-logo" src="kaysons-logo.jpg" alt="Kaysons Techno Equipments Private Limited" width="500" height="93" loading="lazy" decoding="async">
 <p>Explosion-protected electrical equipment for hazardous industrial areas.</p>
 </div>
     <div>
