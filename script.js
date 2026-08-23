@@ -35,6 +35,8 @@
     ['.requirement-form', 'right'],
     ['.portfolio-filter', ''],
     ['.catalogue-toolbar', ''],
+    ['.faq-intro', 'left'],
+    ['.faq-list', 'right'],
     ['.heritage-intro', 'left'],
     ['.industry-panel', 'right'],
     ['.map-copy', 'left'],
