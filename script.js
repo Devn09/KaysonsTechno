@@ -47,6 +47,7 @@
     if (typeof value !== 'string' || !value.trim()) return '';
     try { const url = new URL(value, location.href); return ['https:', 'http:'].includes(url.protocol) || (location.protocol === 'file:' && url.protocol === 'file:') ? url.href : ''; } catch (_) { return ''; }
   };
+<<<<<<< HEAD
   const cards = $$('.product-card');
   const assets = window.KAYSONS_PRODUCT_ASSETS || {};
   cards.forEach(card => {
@@ -57,6 +58,63 @@
     if (source) {
       const img = document.createElement('img'); img.className = 'product-photograph'; img.alt = asset.imageAlt || `${$('h2', card).textContent} by Kaysons`; img.loading = 'lazy'; img.decoding = 'async'; img.width = 800; img.height = 600;
       img.addEventListener('load', () => card.classList.add('has-photo'), { once: true }); img.addEventListener('error', () => { img.remove(); card.classList.remove('has-photo'); }, { once: true }); img.src = source; $('.product-media', card).append(img);
+=======
+
+  addReveal(document.querySelector('.hero-content'), 'left');
+  addReveal(document.querySelector('.hazard-panel'), 'right');
+  document.querySelectorAll('.page-hero-grid > *').forEach((element, index) => {
+    addReveal(element, index === 0 ? 'left' : 'right');
+  });
+
+  [
+    ['.approval-intro', 'left'],
+    ['.section-heading', ''],
+    ['.why-title-block', 'left'],
+    ['.cta-grid', ''],
+    ['.about-statement', 'left'],
+    ['.about-copy', 'right'],
+    ['.capability-title', 'left'],
+    ['.contact-details', 'left'],
+    ['.requirement-form', 'right'],
+    ['.portfolio-filter', ''],
+    ['.catalogue-toolbar', ''],
+    ['.faq-intro', 'left'],
+    ['.faq-list', 'right'],
+    ['.heritage-intro', 'left'],
+    ['.industry-panel', 'right'],
+    ['.map-copy', 'left'],
+    ['.map-frame', 'right'],
+    ['.legal-grid aside', 'left'],
+    ['.legal-copy', 'right']
+  ].forEach(([selector, direction]) => {
+    document.querySelectorAll(selector).forEach((element) => addReveal(element, direction));
+  });
+
+  [
+    ['.approval-marks', '.approval-mark'],
+    ['.home-capability-grid', 'article'],
+    ['.why-points', 'article'],
+    ['.industry-chips', 'span'],
+    ['.catalogue-grid', '.catalogue-card'],
+    ['.process-grid', 'article'],
+    ['.capability-list', ':scope > div']
+  ].forEach(([containerSelector, itemSelector]) => {
+    document.querySelectorAll(containerSelector).forEach((container) => {
+      container.querySelectorAll(itemSelector).forEach((item, index) => {
+        addReveal(item, 'scale');
+        item.style.setProperty('--reveal-delay', `${Math.min(index * 65, 325)}ms`);
+      });
+    });
+  });
+
+  const activateReveals = () => {
+    if (revealsActivated) return;
+    revealsActivated = true;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealTargets.forEach((item) => item.classList.add('is-visible'));
+      return;
+>>>>>>> 1c94fd5837f48baddd995d7843ec0fd1a7893e09
     }
     const resources = $('.product-resources', card);
     const addResource = (label, href) => { const url = safeResource(href); if (!url) return; const link = document.createElement('a'); link.textContent = label; link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.download = label; resources.append(link); };

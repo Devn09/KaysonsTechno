@@ -4,12 +4,16 @@ A complete static website. Extract this package with `index.html` at the reposit
 
 ## Pages
 
+<<<<<<< HEAD
 - `index.html` — home, equipment capabilities, approvals and industries
 - `products.html` — ten product families, search, expandable filters and six FAQs
 - `about.html` — company, manufacturing process and quality approach
 - `contact.html` — enquiry form, all sales and office contacts, address and map
 - `legal.html` — retained Privacy Policy and Website Terms
 - `404.html` — self-contained recovery page
+=======
+The package includes a branded first-visit preloader, scroll progress, section reveals, product search and filtering, a six-question product FAQ, product-media/download provisions, a custom 404 page, a Google Maps preview, keyword-led SEO titles, structured data, a consent-based GA4 provision and an EmailJS-ready enquiry form. The loader is skipped automatically when navigating between pages in the same browser session.
+>>>>>>> 1c94fd5837f48baddd995d7843ec0fd1a7893e09
 
 ## What is ready
 
