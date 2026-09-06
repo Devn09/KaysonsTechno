@@ -1,0 +1,82 @@
+[
+  {
+    "name": "All main and legal pages initialise without an exception",
+    "status": "pass"
+  },
+  {
+    "name": "Search, empty state and reset",
+    "status": "pass"
+  },
+  {
+    "name": "Protection OR logic and active count",
+    "status": "pass"
+  },
+  {
+    "name": "Filters restore from URL and preserve product hash",
+    "status": "pass"
+  },
+  {
+    "name": "Advanced filter AND logic uses only provided scope data",
+    "status": "pass"
+  },
+  {
+    "name": "Unknown advanced fields are absent; unsafe document URLs excluded",
+    "status": "pass"
+  },
+  {
+    "name": "Keyboard search shortcut and Escape close disclosure",
+    "status": "pass"
+  },
+  {
+    "name": "Mobile toggle updates state; Escape restores focus",
+    "status": "pass"
+  },
+  {
+    "name": "Contact deep link picks the correct family",
+    "status": "pass"
+  },
+  {
+    "name": "Invalid form highlights fields, rejects whitespace and email errors",
+    "status": "pass"
+  },
+  {
+    "name": "Email fallback retains details and never claims sent",
+    "status": "pass"
+  },
+  {
+    "name": "Honeypot prevents enquiry processing",
+    "status": "pass"
+  },
+  {
+    "name": "Confirmed online delivery sends correct readable product and stage",
+    "status": "pass"
+  },
+  {
+    "name": "Failed online delivery preserves entered content and gives fallback",
+    "status": "pass"
+  },
+  {
+    "name": "No analytics network request without ID or with denied consent",
+    "status": "pass"
+  },
+  {
+    "name": "Analytics opt in, revoke, and opt in again",
+    "status": "pass"
+  },
+  {
+    "name": "CSS parses and uses supported static breakpoints",
+    "status": "pass"
+  },
+  {
+    "name": "404 recovery resolves custom, GitHub project and GitHub root paths",
+    "status": "pass"
+  },
+  {
+    "name": "Category navigation clears filters so the destination is visible",
+    "status": "pass"
+  },
+  {
+    "name": "Configured photo has a visible loading area and failure removes it",
+    "status": "pass"
+  }
+]

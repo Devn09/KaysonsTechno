@@ -1,0 +1,76 @@
+{
+  "pages": [
+    {
+      "page": "products.html",
+      "title": "Explosion-Proof Electrical Equipment Products | Kaysons",
+      "links": 43,
+      "images": 2
+    },
+    {
+      "page": "about.html",
+      "title": "\n      Explosion-Proof Equipment Manufacturer in India | About Kaysons\n    ",
+      "links": 22,
+      "images": 9
+    },
+    {
+      "page": "legal.html",
+      "title": "Privacy Policy & Website Terms | Kaysons",
+      "links": 25,
+      "images": 2
+    },
+    {
+      "page": "index.html",
+      "title": "\n      Explosion-Proof Electrical Equipment Manufacturer in India | Kaysons\n    ",
+      "links": 29,
+      "images": 10
+    },
+    {
+      "page": "contact.html",
+      "title": "\n      Contact Kaysons | Explosion-Proof Electrical Equipment Manufacturer\n    ",
+      "links": 32,
+      "images": 2
+    }
+  ],
+  "product_families": 10,
+  "faqs": 6,
+  "contrast_pairs": [
+    [
+      "#20252a",
+      "#ffffff",
+      15.45
+    ],
+    [
+      "#58616a",
+      "#ffffff",
+      6.3
+    ],
+    [
+      "#ba232b",
+      "#ffffff",
+      6.24
+    ],
+    [
+      "#ffffff",
+      "#ba232b",
+      6.24
+    ],
+    [
+      "#d9dfe3",
+      "#20272e",
+      11.22
+    ],
+    [
+      "#626d76",
+      "#ffffff",
+      5.29
+    ],
+    [
+      "#58616a",
+      "#f4f6f7",
+      5.81
+    ]
+  ],
+  "errors": [],
+  "total_files": 41,
+  "bytes": 1149729
+}

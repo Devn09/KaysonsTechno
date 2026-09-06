@@ -7,9 +7,9 @@ window.KAYSONS_SITE_CONFIG = Object.freeze({
   emailjs: Object.freeze({
     publicKey: "",
     serviceId: "",
-    templateId: ""
+    templateId: "",
   }),
   analytics: Object.freeze({
-    measurementId: ""
-  })
+    measurementId: "",
+  }),
 });

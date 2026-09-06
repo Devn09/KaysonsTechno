@@ -23,7 +23,7 @@ The page layout is complete. Product asset paths are held in `product-assets.js`
 }
 ```
 
-This is a path example, not a claim about a product's certification. Add only the certificates and scope verified for the actual models shown. Photographs and resource links appear automatically. A failed image falls back to the family tile. Unavailable documents never appear as broken download controls.
+This is a path example, not a claim about a product's certification. Add only the certificates and scope verified for the actual models shown. Photographs and resource links appear automatically. A failed image falls back to the text listing. Empty document fields do not create download controls. Check that every supplied path points to an existing file before publishing.
 
 Use an 800–1200px WebP photograph with room around the product; a 4:3 image on white or transparent background works well. Product photos use `object-fit: contain` so they are not stretched or cropped. Compress files before adding them.
 
@@ -41,7 +41,7 @@ Selections within a filter group use OR. Different groups use AND. Family-level 
 
 ## Main imagery and copy
 
-`assets/engineering-study.webp` is original illustrative artwork. The homepage labels it as a material study. Replace it with a final supplied image and update the image alt text and caption together if desired. Do not label the generated artwork as a product or factory photograph.
+`assets/industry-refinery.webp` is a licensed photograph illustrating an industry application. It is not a Kaysons factory or project photograph. You may replace it with a supplied photograph; update the alternative text and caption in `index.html` together. Keep a wide crop and compress it before publishing. Attribution and source details are in `ASSET_CREDITS.md`.
 
 All visible page copy is ordinary HTML. `products-data.json` is a reference export only; editing it does not change the rendered cards. Edit product titles/descriptions in `products.html`, and keep the contact options and FAQ structured data aligned with any later copy changes.
 

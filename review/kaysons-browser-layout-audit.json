@@ -1,0 +1,114 @@
+[
+  {
+    "page": "index.html",
+    "viewport": 375,
+    "client": 360,
+    "scroll": 360,
+    "menu": true
+  },
+  {
+    "page": "index.html",
+    "viewport": 768,
+    "client": 753,
+    "scroll": 753,
+    "menu": true
+  },
+  {
+    "page": "index.html",
+    "viewport": 1024,
+    "client": 1009,
+    "scroll": 1009,
+    "menu": false
+  },
+  {
+    "page": "index.html",
+    "viewport": 1440,
+    "client": 1425,
+    "scroll": 1425,
+    "menu": false
+  },
+  {
+    "page": "products.html",
+    "viewport": 375,
+    "client": 360,
+    "scroll": 360,
+    "menu": true
+  },
+  {
+    "page": "products.html",
+    "viewport": 768,
+    "client": 753,
+    "scroll": 753,
+    "menu": true
+  },
+  {
+    "page": "products.html",
+    "viewport": 1024,
+    "client": 1009,
+    "scroll": 1009,
+    "menu": false
+  },
+  {
+    "page": "products.html",
+    "viewport": 1440,
+    "client": 1425,
+    "scroll": 1425,
+    "menu": false
+  },
+  {
+    "page": "about.html",
+    "viewport": 375,
+    "client": 360,
+    "scroll": 360,
+    "menu": true
+  },
+  {
+    "page": "about.html",
+    "viewport": 768,
+    "client": 753,
+    "scroll": 753,
+    "menu": true
+  },
+  {
+    "page": "about.html",
+    "viewport": 1024,
+    "client": 1009,
+    "scroll": 1009,
+    "menu": false
+  },
+  {
+    "page": "about.html",
+    "viewport": 1440,
+    "client": 1425,
+    "scroll": 1425,
+    "menu": false
+  },
+  {
+    "page": "contact.html",
+    "viewport": 375,
+    "client": 360,
+    "scroll": 360,
+    "menu": true
+  },
+  {
+    "page": "contact.html",
+    "viewport": 768,
+    "client": 753,
+    "scroll": 753,
+    "menu": true
+  },
+  {
+    "page": "contact.html",
+    "viewport": 1024,
+    "client": 1009,
+    "scroll": 1009,
+    "menu": false
+  },
+  {
+    "page": "contact.html",
+    "viewport": 1440,
+    "client": 1425,
+    "scroll": 1425,
+    "menu": false
+  }
+]

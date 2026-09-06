@@ -1,40 +1,42 @@
 # Kaysons Techno Equipments Private Limited
 
-A complete static website. Extract this package with `index.html` at the repository root, commit, and push to GitHub Pages. No npm installation or build command is required.
+Corporate website rebuild — 6 September 2026.
+
+This is a complete static HTML, CSS and JavaScript website for GitHub Pages. No npm installation, build command or application server is required. Replace the previous website files as a complete set, keeping your repository's `.git` directory and existing `CNAME` custom-domain file. Keep `index.html` at the repository root.
 
 ## Pages
 
-<<<<<<< HEAD
-- `index.html` — home, equipment capabilities, approvals and industries
-- `products.html` — ten product families, search, expandable filters and six FAQs
-- `about.html` — company, manufacturing process and quality approach
-- `contact.html` — enquiry form, all sales and office contacts, address and map
-- `legal.html` — retained Privacy Policy and Website Terms
-- `404.html` — self-contained recovery page
-=======
-The package includes a branded first-visit preloader, scroll progress, section reveals, product search and filtering, a six-question product FAQ, product-media/download provisions, a custom 404 page, a Google Maps preview, keyword-led SEO titles, structured data, a consent-based GA4 provision and an EmailJS-ready enquiry form. The loader is skipped automatically when navigating between pages in the same browser session.
->>>>>>> 1c94fd5837f48baddd995d7843ec0fd1a7893e09
+- `index.html`: company introduction, product overview, certifications and application support.
+- `products.html`: ten original product groups, category navigation, search, protection filters and six FAQs.
+- `about.html`: company profile, manufacturing process, quality approach and approvals.
+- `contact.html`: enquiry form, all supplied sales and office contacts, address and map.
+- `legal.html`: Privacy Policy and Website Terms.
+- `404.html`: self-contained page recovery, including GitHub project-site handling.
 
-## What is ready
+## Design and behaviour
 
-The site includes a local Onest variable font, compressed homepage artwork, responsive navigation, keyboard focus states, reduced-motion handling, product-specific enquiry links, preserved SEO metadata and structured data, sitemap and robots file. There is no loading overlay or JavaScript page-transition barrier. Every page uses normal HTML links.
+The interface uses Kaysons red, charcoal, white and light grey, a locally hosted Onest font, a consistent heading scale and restrained rectangular controls. The homepage photograph illustrates an industry application; it is not presented as a Kaysons facility. Credit and licence details are in `ASSET_CREDITS.md`.
 
-Desktop navigation remains visible at 900px and above. The compact Menu control appears below that width. Product layouts use three, two and one columns as the viewport narrows. Header and footer logo proportions are fixed to the original 500:93 aspect ratio. All three sales numbers appear in the footer.
+Desktop navigation is always visible at 800px and above. Smaller screens use the Menu button. The catalogue has a category directory and two columns on desktop, and one column on phones. Header and footer logos preserve the original 500:93 proportions. All three sales numbers appear in each shared footer.
 
-## Finish the content
+Pages use normal HTML links. There is no loading overlay, artificial page delay or content hidden pending an animation. Product copy and FAQ content remain available without JavaScript. Mobile navigation remains visible if JavaScript cannot initialise.
 
-Follow `CONTENT_GUIDE.md` to add real photographs, certificates, catalogues and datasheets. The homepage artwork is an original abstract engineering material study, not a photograph of a Kaysons product. Product tiles intentionally use family typography until real photos are added.
+Shared presentation is in `kaysons.css`; enhancements are in `kaysons.js`. The HTML references include version identifiers to avoid using an earlier cached stylesheet or script.
 
-## Email delivery
+## Add final content
 
-The default enquiry form prepares an email and provides an explicit Open email app button and a copyable message. The visitor must send the message from their email application. It never reports that the message was sent in this mode.
+Follow `CONTENT_GUIDE.md` to connect photographs, certificates, catalogues and datasheets using `product-assets.js`. Product entries are complete text listings until images are supplied; empty media areas and unavailable download controls are not displayed. A failed image returns to the text listing.
 
-To enable direct delivery, complete the existing public EmailJS settings in `site-config.js`. See `SETUP_EMAILJS_ANALYTICS.md`. Account delivery and domain restrictions must be verified after configuration. Optional GA4 tracking is disabled until a measurement ID is provided and the visitor gives consent.
+## Enquiry delivery
 
-## Domain
+By default, the form prepares a message and offers an explicit **Open email app** link and copyable text. The visitor must send it from their email application. It does not claim that preparing the message sends it.
 
-The preserved canonical URLs, Open Graph image URL, robots file and sitemap use `https://www.kaysonstechno.com/`. Update them together if the production domain changes. Use this ZIP's static files with the existing GitHub Pages repository. The custom 404 includes recovery for project sites on github.io and root-level custom domains.
+Direct delivery requires your public EmailJS identifiers in `site-config.js` and a verified account/template configuration. Optional GA4 requires a measurement ID and visitor consent. Both are described in `SETUP_EMAILJS_ANALYTICS.md`.
 
-## Validation
+## Domain and deployment
 
-See `VALIDATION.md` for checks performed and their limits. The site source and interactions were checked programmatically; this package is not represented as having passed real-browser or real email-delivery tests.
+Canonical metadata, robots and sitemap use `https://www.kaysonstechno.com/`. Update these together if the production domain changes. Follow `GITHUB_DESKTOP_WINDOWS.md` to replace the existing site. Deployment was not performed as part of this rebuild.
+
+## Verification
+
+See `VALIDATION.md`. The four main pages were measured in Chrome at 375, 768, 1024 and 1440px; all fitted without horizontal overflow. Desktop and mobile layouts, navigation, filtering, FAQs, form validation, prepared enquiries and image fallback were reviewed. Twenty automated interaction checks also passed. Real email delivery and production hosting still require their configured environment.

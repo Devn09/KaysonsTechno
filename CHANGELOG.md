@@ -1,17 +1,17 @@
-# Complete Kaysons redesign — September 2026
+# Corporate rebuild — 6 September 2026
 
-The August SEO/FAQ archive had reintroduced an older interface and omitted the product-asset registry and two footer sales numbers. This version combines the preserved SEO and FAQ additions with a complete redesign and restores the missing content provisions.
+Rebuilt the four-page interface after the previous design was reported as broken and unprofessional.
 
-- New editorial homepage, original metallic engineering artwork and restrained graphite/red/white palette.
-- One typography system using a bundled Onest variable font.
-- Complete Products, About and Contact layouts within the existing four-page structure.
-- Permanent desktop navigation; mobile Menu only below 900px.
-- Original logo proportions retained; all three sales numbers displayed in shared footers.
-- Artificial preloaders and navigation barriers removed.
-- Product search, expanding filter panel, active-filter controls and clear empty results.
-- Verified-data-driven advanced filter availability and safe document links.
-- Product-specific contact links with automatic category selection.
-- Clear email preparation, copyable content, inline form errors and configured-service failure recovery.
-- Consent-based analytics with grant/revoke/regrant handling.
-- Retained six FAQs, legal copy, SEO metadata, sitemap, robots and a branded standalone 404 page.
-- Updated content and GitHub deployment instructions.
+- Replaced the editorial layout with a consistent manufacturer website: restrained headings, rectangular controls, clear page introductions and practical content grids.
+- Added a compressed, licensed industry photograph to the homepage.
+- Rebuilt shared CSS in `kaysons.css` and simplified enhancement code in `kaysons.js`.
+- Kept desktop navigation permanent and made Menu mobile-only below 800px.
+- Corrected long product-name wrapping after a browser check identified mobile overflow.
+- Used clean text product listings until actual photographs are supplied.
+- Fixed configured image loading so lazy images have a visible media area; failed images fall back cleanly.
+- Made category links clear search and filters so their destinations remain visible.
+- Added an accessible name to the compact product-filter control.
+- Preserved the ten original product groups, six FAQs, approval order, all contact details and three footer sales numbers.
+- Retained product-specific enquiries, explicit prepared-email feedback, EmailJS provision and optional consent-based analytics.
+- Restyled the 404 page and verified root/custom-domain and GitHub-project recovery logic.
+- Verified browser layouts and core interactions, and updated the asset and deployment guides.
