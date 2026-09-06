@@ -1,0 +1,110 @@
+[
+  {
+    "id": "lighting-fittings",
+    "name": "Lighting Fittings",
+    "family": "Lighting",
+    "description": "Explosion-protected lighting formats for industrial areas where dependable visibility is required.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "control-station-motor-starter",
+    "name": "Control Station / Motor Starter",
+    "family": "Control",
+    "description": "Local operator controls and motor-starting assemblies configured around the application and operating environment.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "plug-switch-sockets",
+    "name": "Plug & Sockets / Switch Sockets",
+    "family": "Connection",
+    "description": "Plug, socket and switched-socket arrangements for equipment connection in hazardous areas.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "panels",
+    "name": "Control/Power/Instrument Panels",
+    "family": "Panels",
+    "description": "Control, power and instrumentation panel systems developed to suit defined project requirements.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "junction-instrument-enclosures",
+    "name": "Junction Boxes / Instruments Enclosures",
+    "family": "Enclosures",
+    "description": "Field termination, distribution and instrument enclosure solutions for demanding plant environments.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "limit-switch",
+    "name": "Limit Switch",
+    "family": "Switching",
+    "description": "Industrial switching equipment for position and travel detection in hazardous-area applications.",
+    "protection": [
+      "ex-d",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "rtd-heads",
+    "name": "RTD/Thermocouple/Heater/Multipurpose Head",
+    "family": "Sensor heads",
+    "description": "Connection heads for temperature sensing, heater and multipurpose termination requirements.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "cable-glands",
+    "name": "Cable Glands",
+    "family": "Cable entry",
+    "description": "Cable-entry components selected for mechanical retention, environmental sealing and explosion protection.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "conduit-ex-components",
+    "name": "Conduit Accessories and Ex Components",
+    "family": "Components",
+    "description": "Conduit accessories and explosion-protected components selected for the application and specified gas group.",
+    "protection": [
+      "ex-d",
+      "ex-e",
+      "ex-t"
+    ]
+  },
+  {
+    "id": "increased-safety-enclosures",
+    "name": "Increased Safety Empty & Populated Enclosures",
+    "family": "Increased safety",
+    "description": "Empty and populated increased-safety enclosure formats for project-specific electrical assemblies.",
+    "protection": [
+      "ex-e",
+      "ex-t"
+    ]
+  }
+]

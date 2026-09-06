@@ -1,23 +1,12 @@
-# Publish with GitHub Desktop on Windows
+# Publish through GitHub Desktop
 
-## Replace the current website
+1. Extract the ZIP to a folder on your Windows PC.
+2. In GitHub Desktop, open the existing website repository.
+3. Choose Repository → Show in Explorer.
+4. Keep the repository's `.git` folder and any existing `CNAME` file for your custom domain. Replace the website's HTML, CSS, JavaScript and asset files with this package.
+5. Ensure `index.html` is directly at the repository root, with `assets/` beside it.
+6. Review changes in GitHub Desktop, commit and select Push origin.
+7. In the repository's GitHub settings, open Pages, select Deploy from a branch, and choose `main` and `/(root)` if those are the repository's intended branch and folder.
+8. Open the published website and confirm page navigation, mobile navigation, filters, maps and email enquiry behavior.
 
-1. Download and extract the ZIP.
-2. Open GitHub Desktop and select your kaysons-website repository.
-3. Choose **Repository → Show in Explorer**.
-4. Keep the hidden **.git** folder. Delete the old visible website files from this repository folder.
-5. Copy every file from the extracted folder into the repository folder. The file **index.html** must be at the top level, not inside another folder.
-6. Return to GitHub Desktop. Enter the summary **Redesign Kaysons website**.
-7. Select **Commit to main**, then **Push origin**.
-
-Before committing, complete the public EmailJS and optional GA4 IDs in **site-config.js** by following **SETUP_EMAILJS_ANALYTICS.md**. If those IDs are not yet available, the website still works and the enquiry form falls back to preparing an email in the visitor's email application.
-
-## Turn on GitHub Pages
-
-1. Open the repository on github.com.
-2. Select **Settings → Pages**.
-3. Under **Build and deployment**, set Source to **Deploy from a branch**.
-4. Choose branch **main**, folder **/(root)**, then select **Save**.
-5. Wait about two minutes and refresh the Pages section. GitHub will show the published address.
-
-Do not use Render and do not enter an npm build command. This package is a complete static website.
+No npm dependency installation, build command or Render web service is needed. Direct email delivery needs the public EmailJS settings described in `SETUP_EMAILJS_ANALYTICS.md`; otherwise the email-app workflow remains available.

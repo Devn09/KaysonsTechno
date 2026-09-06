@@ -1,30 +1,23 @@
-# Activate EmailJS and basic analytics
+# Email delivery and optional analytics
 
-The website is fully prepared for EmailJS and consent-based Google Analytics 4. Both integrations remain inactive until the account-specific public IDs are added to `site-config.js`.
+Both integrations are inactive until their public account identifiers are supplied in `site-config.js`. No private email password or private API key belongs in this file.
 
-## EmailJS
+## Existing EmailJS provision
 
-1. Create an EmailJS account at https://www.emailjs.com/.
-2. Add an email service connected to the Kaysons sales mailbox.
-3. Create an email template and set its recipient in the EmailJS dashboard to `sales@kaysonstechno.com`.
-4. Use these template variables: `{{from_name}}`, `{{company}}`, `{{phone}}`, `{{reply_to}}`, `{{product}}`, `{{protection}}`, `{{project_stage}}`, `{{message}}` and `{{privacy_consent}}`.
-5. In `site-config.js`, enter the EmailJS **Public Key**, **Service ID** and **Template ID**. Do not enter the mailbox password or any private key.
-6. In EmailJS security settings, allow the final Kaysons website domain and enable CAPTCHA if required.
-7. Submit one test enquiry and confirm both delivery and reply-to behaviour.
+Configure the service and template in your EmailJS account. Set the recipient to `sales@kaysonstechno.com` in the template itself, and use `{{reply_to}}` as Reply-To. The site passes these fields:
 
-Until these three IDs are entered, submitting the form safely prepares an email in the visitor's email application instead of losing the enquiry.
+`from_name`, `company`, `phone`, `reply_to`, `product`, `protection`, `project_stage`, `message`, `privacy_consent`, `subject`, `to_email`.
 
-## Google Analytics 4
+Then enter `publicKey`, `serviceId` and `templateId` in `site-config.js`. Restrict the service to your final domain using the account controls available to you. Submit a test after deployment and verify the received email and reply-to address.
 
-1. Create a GA4 property and a Web data stream for the final Kaysons domain.
-2. Copy the Measurement ID in the format `G-XXXXXXXXXX`.
-3. Enter it under `analytics.measurementId` in `site-config.js`.
-4. Analytics loads only after the visitor selects **Allow analytics** in the consent notice. Essential-only visitors are not tracked.
-5. Verify page views in the GA4 Realtime report after deployment.
+In the default mode, the visitor prepares a message on the page, opens their email app, and sends it. A copyable message is also available. The site does not claim successful delivery merely because an email was prepared. If configured online delivery fails or times out, entered details are retained and the email fallback is shown.
 
-## Before publishing
+Any CAPTCHA requirement needs its corresponding front-end integration before activation; enabling a challenge in the account alone is not an implemented website challenge.
 
-- Replace only the empty values inside `site-config.js`.
-- Test the contact form on the deployed HTTPS site.
-- Confirm the Google Maps preview and all footer legal links.
-- Keep the Privacy Policy updated if a new analytics, form, chat or advertising service is added.
+## Existing GA4 provision
+
+Enter your web stream's `G-…` measurement ID under `analytics.measurementId`. Analytics loads only after the visitor chooses Allow analytics. Essential only prevents tracking. Cookie settings allows the visitor to change the preference.
+
+Configured, consented events include page views, enquiry CTA clicks, phone clicks, email clicks, document links, and `generate_lead` only after confirmed online enquiry delivery. Names, email addresses, phone input values and message bodies are not passed as analytics events. GA4 reporting and delivery must be verified with your actual property after deployment.
+
+The preserved sitemap is `sitemap.xml`. Submit it in the Search Console account for the final production domain when the site is published there.
